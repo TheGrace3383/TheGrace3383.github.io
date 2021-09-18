@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap * { border: 1px solid red; padding: 10px; margin-bottom: 10px;}
+        #wrap { width: 600px; margin: 0 auto; }
+        .left { float: left; width: 100px; height: 200px; }
+        .right { float: right; width: 100px; height: 200px; }
+        #content { background-color: yellow; }
+        /* #content::before { content: "앞부분에 내용추가";} */
+        /* #content::after { content: "뒷 부분에 내용추가";} */
+        #content::after { content: ""; display: block; clear: both; }
+        /* 히든의 문제  킥배너같이 바깥에 있는 친구들 그래서 하이트를 넣기느나는데
+            이러면 고정하면 문제가 있어서 실무에서는 가상의 공간을 렌더링한다
+            가로안에 콘텐트없으면 랜더링 자체가 안되서 빈칸이라도 써야되
+            가상공간에 쓰면 푸터도 안겹치고 하이트가 돌아옴*/
+        #footer { background-color: skyblue; }
+        /* 플로팅이 겹친다 -박스만 컨텐츠하고 안겹쳐!  q보스로아예 따로살어!*/
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>LOGD</h1>
+        </div>
+        <div id="content">
+            <!-- ::before 내용추가 -->
+            <div class="left">서브메뉴</div>
+            <div class="right">본문단</div>
+            <!-- ::after 내용추가 -->
+        </div>
+        
+        <div id="footer">
+            <p>copyright</p>
+        </div>
+    </div>
+</body>
+</html>
